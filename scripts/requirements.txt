@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# requirements.txt — dépendances Python
+flask>=2.3.0
+requests>=2.31.0
