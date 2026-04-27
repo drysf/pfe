@@ -1,0 +1,12 @@
+services:
+  escape-game:
+    build:
+      context: ..
+      dockerfile: vm/Dockerfile
+    container_name: pfe-escape-game
+    ports:
+      - "5000:5000"
+      - "4242:4242"
+    volumes:
+      - ../assets:/app/assets
+    restart: unless-stopped

@@ -1,16 +1,56 @@
 # Escape Game Cyber - PFE L3B Groupe 3
 
-**Structure prête. Dev lundi.**
+Projet 2025/2026 - LSI L3B - Groupe 3.
+Implementation du sujet **"Escape Game Cybersecurite"** (Fiche Projet Cyber).
 
-**Équipe :**
-- Younes : scripts/ (Flask/SQLi)
-- Drys : vm/ (Vagrant/Docker)
-- Sami : énigmes scripts/
-- Ryan : tests/
+## Equipe
 
-**5 défis à créer :**
-1. Login mdp faible
-2. SQL `' OR 1=1 --`
-3. Crypto fichier
-4. Stego image
-5. Réseau socket
+- **Younes** - Defi 1 (Flask / SQLi)
+- **Drys**   - Containerisation (Docker)
+- **Sami**   - Defis 2 et 3 (Crypto / Stegano)
+- **Ryan**   - Defis 4 et 5 (Socket / AES) + Tests + Docs
+
+## Synopsis
+
+Sophie Dupont, employee de MegaCorp, a ete piratee. Les etudiants doivent
+reconstituer la chaine d'attaque a travers 5 defis chaines couvrant
+**web, cryptographie, forensic / steganographie, reseau et crypto
+symetrique**, jusqu'au tresor final.
+
+## Demarrage rapide
+
+```bash
+# Installation
+make install
+
+# Generation des artefacts (image stego, fichier chiffre, tresor)
+make assets
+
+# Lancement (web port 5000 + socket port 4242)
+make run
+
+# Ou via Docker
+make docker-up
+```
+
+Ouvrir ensuite `http://127.0.0.1:5000/mail`.
+
+## Tests
+
+```bash
+make test
+```
+
+12 tests pytest dont un test de bout en bout qui rejoue les 5 defis.
+
+## Documentation
+
+- [Guide etudiant](docs/student_guide.md)
+- [Walkthrough (encadrants)](docs/walkthrough.md)
+- [Architecture](docs/architecture.md)
+
+## Domaines couverts
+
+Web (OWASP A03 - Injection), Cryptographie classique (Vigenere),
+Steganographie (LSB sur PNG), Reseau (TCP authentifie),
+Crypto moderne (AES-256-GCM + scrypt KDF).
